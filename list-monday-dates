@@ -1,0 +1,5 @@
+cal | cut -c 3-5
+
+# -c specifie that the field to output will be columns.
+# 3-5 specifie range included of columns to output.
+# the counting of columns start in 1.

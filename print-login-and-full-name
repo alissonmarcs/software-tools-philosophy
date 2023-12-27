@@ -1,0 +1,4 @@
+cut -d: -f1,5 /etc/passwd
+
+# -d: specifie delimiter of a field.
+# -f1,5 specifie the fields to output.

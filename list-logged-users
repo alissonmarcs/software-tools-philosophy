@@ -1,0 +1,5 @@
+	who | cut -c 1-8 | sort | uniq -c
+
+# -c specifie that the field to output will be a column.
+# specifie 1-8 range included of columns to output.
+# the count of columns start in 1.

@@ -1,0 +1,20 @@
+< $1 tr A-Z a-z |			#1
+tr -cd '[:alnum:]_ \n' |	#2
+tr -s ' ' '\n' |			#3
+sort |						#4
+uniq -c |					#5
+sort -n -r					#6
+
+### steps ###
+
+# tr
+# 1 - $1 will be input of tr, that convert all characters to lowercase.
+# 2 - remove all characteres that are not alphanum, '_', ' ' and '\n'.
+#   -c operate on complement of '[:alnum:]_ \n', i.e, all character that are
+#	not in this string set. -d delete all those characters.
+# 3 - put one word per line, this makes the counting operation much easier.
+# 4 - first sort to put all equal lines adjacent, since uniq only count
+#	adjacent lines.
+# 5 - merge equal adjacent lines, and prefix the number of occurrences.
+# 6 - final numered (all lines are prefixed by a number) and reversed
+#	(from biggest to smallest) sort.
